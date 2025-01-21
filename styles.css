@@ -1,13 +1,21 @@
+:root {
+  --bg: #243c28;
+}
+
 body {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 0;
-  height: 100dvh;
   background: url("images/background.jpg") no-repeat center center;
   background-size: cover;
 }
+
+/* img { */
+/*   max-width: 100%; */
+/*   height: auto; */
+/* } */
 
 .container {
   .character {
@@ -18,11 +26,14 @@ body {
     align-items: center;
     pointer-events: none;
     user-select: none;
+    height: 100dvh;
 
     & * {
-      pointer-events: none;
       position: absolute;
       z-index: 1;
+      height: 100%;
+      width: auto;
+      object-fit: cover;
     }
 
     .shirts {
