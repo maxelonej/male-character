@@ -10,28 +10,28 @@ body {
   background-size: cover;
 }
 
-.character {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 800px;
-  max-width: 100%;
-  max-height: 100%;
-  height: 600px;
-
-  & * {
+.container {
+  .character {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     pointer-events: none;
-    position: absolute;
-    z-index: 1;
-  }
+    user-select: none;
 
-  .shirts {
-    z-index: 2;
-  }
+    & * {
+      pointer-events: none;
+      position: absolute;
+      z-index: 1;
+    }
 
-  .body {
-    z-index: 0;
+    .shirts {
+      z-index: 2;
+    }
+
+    .body {
+      z-index: 0;
+    }
   }
 }
