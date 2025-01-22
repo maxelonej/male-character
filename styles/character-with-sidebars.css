@@ -74,6 +74,7 @@
       }
 
       .title {
+        user-select: none;
         margin: 0;
         text-align: center;
         line-height: 39.01px;
@@ -89,6 +90,7 @@
         place-items: center;
         gap: 46px;
         margin-top: 37px;
+        user-select: none;
 
         .icon_wrapper {
           display: flex;
@@ -150,6 +152,7 @@
         border-radius: 26px;
         outline: none;
         border: none;
+        user-select: none;
         color: var(--white);
         background: var(--appearence-icon-bg);
         cursor: pointer;
