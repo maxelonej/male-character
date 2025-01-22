@@ -12,13 +12,9 @@ if (sidebarPickCharacter) {
     const character = document.querySelector(".container .character");
 
     /*
-     При клике на ячейку:
-     отключать боковую панель выбор персонажа
-     TODO: убирать описание персонажа
-     TODO: передвигать персонажа влево
-     TODO: передвигать сайдбар внешки
-     включать боковую панель выбор внешности
-    */
+     * Скрывать сайдбар выбора персонажа, инфо о персонаже
+     * Показывать сайдбар внешности, передвигать персонажа
+     */
     cell.addEventListener("click", () => {
       sidebarPickCharacter.classList.add("deactive");
       aboutCharacter.classList.add("deactive");
