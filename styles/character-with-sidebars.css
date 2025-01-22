@@ -1,6 +1,7 @@
 .container {
   position: relative;
   width: 100%;
+  max-height: 656px;
 
   .character {
     position: relative;
@@ -32,7 +33,6 @@
   .sidebar {
     position: absolute;
     top: 0%;
-    transform: translateY(16%);
     right: -4%;
     border-radius: 115px;
     box-shadow: var(--inner-shadow);
