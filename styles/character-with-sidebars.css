@@ -48,15 +48,16 @@
       pointer-events: none;
       user-select: none;
       padding: 45px;
+      padding-bottom: calc(45px + 23px);
       transition: var(--transition);
       z-index: 5;
 
       &.active {
-        top: -8%;
         right: 26px;
         opacity: 1;
         pointer-events: all;
         user-select: all;
+        transform: translateY(0px);
       }
 
       &.deactive {
@@ -129,12 +130,15 @@
       }
 
       .back {
+        position: absolute;
         display: flex;
         justify-self: end;
         padding: 22px 20px;
-        margin-top: 26px;
         font-family: Montserrat Alternates;
         font-weight: bolder;
+        left: 40%;
+        bottom: 0;
+        transform: translateY(35px);
         font-size: 24px;
         border-radius: 26px;
         outline: none;
@@ -183,6 +187,8 @@
           background: var(--sidebar-cell-bg);
           border-radius: 29px;
           color: var(--black);
+          border: none;
+          outline: none;
           cursor: pointer;
           transition: var(--transition);
 
