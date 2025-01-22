@@ -1,3 +1,4 @@
 // imports
 
-import "./display-cell-character.js";
+import "./appearence-sidebar.js";
+import "./character-sidebar.js";
