@@ -1,0 +1,35 @@
+.about-character {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin-left: 17px;
+  color: var(--white);
+  z-index: 3;
+
+  .title {
+    font-family: Montserrat Alternates;
+    font-size: 86px;
+    font-weight: 800;
+    line-height: 104.83px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    width: 711px;
+    height: 105px;
+    margin: 0;
+  }
+
+  .description {
+    margin: 0;
+    margin-top: 26px;
+    margin-bottom: 88px;
+    font-family: Montserrat;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 29.26px;
+    letter-spacing: 0.02em;
+    width: 573px;
+    height: 216px;
+  }
+}
+
