@@ -52,7 +52,12 @@
       transition: var(--transition);
       z-index: 5;
 
+      @media screen and (width >= 1280px) {
+        top: 16px;
+      }
+
       &.active {
+        top: 16px;
         right: 26px;
         opacity: 1;
         pointer-events: all;
