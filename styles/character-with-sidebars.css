@@ -70,6 +70,12 @@
           cursor: pointer;
           transition: var(--transition);
 
+          &:hover {
+            -webkit-box-shadow: 20px 20px 0px -3px rgba(47, 182, 69, 0.2);
+            -moz-box-shadow: 20px 20px 0px -3px rgba(47, 182, 69, 0.2);
+            box-shadow: 20px 20px 0px -3px rgba(47, 182, 69, 0.2);
+          }
+
           .text {
             margin: 0;
             font-family: Inter;
