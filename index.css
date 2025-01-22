@@ -1,9 +1,3 @@
 @import "styles/basic.css";
 @import "styles/about-character.css";
 @import "styles/character-with-sidebars.css";
-
-@media screen and (width <= 1024px) {
-  body {
-    background: #000;
-  }
-}
