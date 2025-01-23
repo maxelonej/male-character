@@ -69,9 +69,7 @@ if (sidebarPickAppearence) {
     session.addEventListener("click", () => {
       const sessionNumber = session.classList.toString().split(" ")[1]; // cell 3 => 3
       const isEdited = session.contains(miniCharacter); // true/false
-      // load from localStorage
 
-      // TODO: add function createCharacter()
       // Если нет персонажа - создаем, отображая только тело по дефолту
       if (!isEdited) {
         character.innerHTML =
@@ -82,11 +80,9 @@ if (sidebarPickAppearence) {
         ".sidebar.pick-appearence .appearence .cell",
       );
       cells.forEach((cell) => {
-        // TODO: при клике на изображение - искать его у себя, если нету - добавлять его, если есть - просто менять src
         cell.addEventListener("click", () => {
           // .container .character > img.wig + img.face + img.shirt + img.pants
           // .pick-character .character.mini > img.wig + img.face + img.shirt + img.pants
-          // брать путь дочернего элемента - изображения.icon
           const appearenceImage = cell.querySelector(".icon"); // <img class="icon" src="images/appearence/face/1.png">
           const appearenceSrc = appearenceImage.getAttribute("src"); // images/appearence/face/1.png
           const currentAppearenceUrl = appearenceSrc.substring(
@@ -104,8 +100,6 @@ if (sidebarPickAppearence) {
           const shirt = character.querySelector(".shirt");
           const pants = character.querySelector(".pants");
 
-          // TODO: does this part of body already exist in character?
-          // if (img.icon[src=${appearenceName}]) {switch case} else {add img.icon[src=${appearenceName}]}
           const characterImage = character.querySelector(`.${appearenceName}`);
           if (characterImage) {
             // Применить найденную одежду на персонажа
@@ -126,10 +120,10 @@ if (sidebarPickAppearence) {
               //   console.log(`${appearenceFromUrl} не существует`);
             }
           } else {
+            // Если нет одежды персонажа - создаем
             const outfit = document.createElement("img");
             outfit.className = appearenceName;
             outfit.src = `images/outfit/${currentAppearenceUrl}`;
-            // Если нет одежды персонажа - создаем
             switch (appearenceName) {
               case "face":
                 outfit.classList.add = "face";
