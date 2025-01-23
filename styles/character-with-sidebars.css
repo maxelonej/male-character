@@ -139,6 +139,14 @@
             outline: none;
             background: var(--appearence-icon-bg);
 
+            &:hover {
+              cursor: not-allowed;
+            }
+
+            &:has(.icon):hover {
+              cursor: grab;
+            }
+
             &:hover .icon {
               max-width: 80%;
               max-height: 80%;
