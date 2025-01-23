@@ -195,7 +195,7 @@
         transition: var(--transition);
 
         &:hover {
-          filter: brightness(0.8);
+          background: #34533a;
         }
       }
     }
