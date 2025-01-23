@@ -10,6 +10,19 @@ if (sidebarPickCharacter) {
     const text = cell.querySelector(".text");
     const aboutCharacter = document.querySelector(".about-character");
     const character = document.querySelector(".container .character");
+    const sessionNumber = cell.classList.toString().split(" ")[1]; // cell 3 => 3
+
+    // Если есть мини перс в ячейке, тогда убрать текст "Персонаж N"
+    if (cell.contains(miniCharacter)) {
+      text.style.display = "none";
+    }
+
+    // Если в ячейке был сохранен персонаж, тогда загрузить его
+    const storedValue = localStorage.getItem(sessionNumber);
+    const savedCharacter = document.createElement("div");
+    savedCharacter.classList.add = "character mini";
+    savedCharacter.innerHTML = storedValue;
+    cell.appendChild(savedCharacter);
 
     /*
      * Скрывать сайдбар выбора персонажа, инфо о персонаже
@@ -21,10 +34,5 @@ if (sidebarPickCharacter) {
       sidebarPickAppearence.classList.add("active");
       character.classList.add("appearence");
     });
-
-    // Если есть мини перс в ячейке, тогда убрать текст "Персонаж N"
-    if (cell.contains(miniCharacter)) {
-      text.style.display = "none";
-    }
   });
 }

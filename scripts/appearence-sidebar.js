@@ -4,6 +4,19 @@ const sidebarPickAppearence = document.querySelector(
 );
 
 if (sidebarPickAppearence) {
+  console.log(sidebarPickAppearence);
+  // При загрузке
+  // if (storedValue !== null && storedValue !== "") {
+  //   // Если персонаж сохранен, тогда добавляем его
+  //   character.innerHTML = storedValue;
+  // } else if (cell.classList.toString().split(" ")[1] === 1) {
+  //   return;
+  // } else {
+  //   // Если нет персонажа - создаем, отображая только тело по дефолту
+  //   character.innerHTML =
+  //     '<img class="body" src="images/character/body.png" alt="Тело персонажа">';
+  // }
+
   const backToCharacterSelection = sidebarPickAppearence.querySelector(".back");
   const aboutCharacter = document.querySelector(".about-character");
   const character = document.querySelector(".container .character");
@@ -51,7 +64,7 @@ if (sidebarPickAppearence) {
       // TODO: изменить
       image.onerror = () => {
         image.remove();
-        console.clear();
+        // console.clear();
       };
 
       cells[i - 1].appendChild(image);
@@ -62,86 +75,76 @@ if (sidebarPickAppearence) {
   appearences[0].classList.add("active");
   uploadCells(appearences[0].classList[1]);
 
-  const sessions = document.querySelectorAll(".sidebar.pick-character .cell");
-  const miniCharacter = document.querySelector(".character.mini");
+  cells.forEach((cell) => {
+    cell.addEventListener("click", () => {
+      // .container .character > img.wig + img.face + img.shirt + img.pants
+      // .pick-character .character.mini > img.wig + img.face + img.shirt + img.pants
+      const appearenceImage = cell.querySelector(".icon"); // <img class="icon" src="images/appearence/face/1.png">
+      const appearenceSrc = appearenceImage.getAttribute("src"); // images/appearence/face/1.png
+      const currentAppearenceUrl = appearenceSrc.substring(
+        18,
+        appearenceSrc.length,
+      ); // face/1.png
+      const appearenceName = currentAppearenceUrl.split("/")[0]; // face
 
-  sessions.forEach((session) => {
-    session.addEventListener("click", () => {
-      const sessionNumber = session.classList.toString().split(" ")[1]; // cell 3 => 3
-      const isEdited = session.contains(miniCharacter); // true/false
+      // Путь одежды для персонажа, исходя из пути ячейки
+      const outfitUrl = `images/outfit/${currentAppearenceUrl}`;
 
-      // Если нет персонажа - создаем, отображая только тело по дефолту
-      if (!isEdited) {
-        character.innerHTML =
-          '<img class="body" src="images/character/body.png" alt="Тело персонажа">';
+      const character = document.querySelector(".container .character");
+      const face = character.querySelector(".face");
+      const wig = character.querySelector(".wig");
+      const shirt = character.querySelector(".shirt");
+      const pants = character.querySelector(".pants");
+
+      const characterImage = character.querySelector(`.${appearenceName}`);
+      if (characterImage) {
+        // Применить найденную одежду на персонажа
+        switch (appearenceName) {
+          case "face":
+            face.src = outfitUrl;
+            break;
+          case "wig":
+            wig.src = outfitUrl;
+            break;
+          case "shirt":
+            shirt.src = outfitUrl;
+            break;
+          case "pants":
+            pants.src = outfitUrl;
+            break;
+          // default:
+          //   console.log(`${appearenceFromUrl} не существует`);
+        }
+      } else {
+        // Если нет одежды персонажа - создаем
+        const outfit = document.createElement("img");
+        outfit.className = appearenceName;
+        outfit.src = `images/outfit/${currentAppearenceUrl}`;
+        switch (appearenceName) {
+          case "face":
+            outfit.classList.add = "face";
+            break;
+          case "wig":
+            outfit.classList.add = "wig";
+            break;
+          case "shirt":
+            outfit.classList.add = "shirt";
+            break;
+          case "pants":
+            outfit.classList.add = "pants";
+            break;
+        }
+        character.appendChild(outfit);
       }
-
-      const cells = document.querySelectorAll(
-        ".sidebar.pick-appearence .appearence .cell",
-      );
-      cells.forEach((cell) => {
-        cell.addEventListener("click", () => {
-          // .container .character > img.wig + img.face + img.shirt + img.pants
-          // .pick-character .character.mini > img.wig + img.face + img.shirt + img.pants
-          const appearenceImage = cell.querySelector(".icon"); // <img class="icon" src="images/appearence/face/1.png">
-          const appearenceSrc = appearenceImage.getAttribute("src"); // images/appearence/face/1.png
-          const currentAppearenceUrl = appearenceSrc.substring(
-            18,
-            appearenceSrc.length,
-          ); // face/1.png
-          const appearenceName = currentAppearenceUrl.split("/")[0]; // face
-
-          // Путь одежды для персонажа, исходя из пути ячейки
-          const outfitUrl = `images/outfit/${currentAppearenceUrl}`;
-
-          const character = document.querySelector(".container .character");
-          const face = character.querySelector(".face");
-          const wig = character.querySelector(".wig");
-          const shirt = character.querySelector(".shirt");
-          const pants = character.querySelector(".pants");
-
-          const characterImage = character.querySelector(`.${appearenceName}`);
-          if (characterImage) {
-            // Применить найденную одежду на персонажа
-            switch (appearenceName) {
-              case "face":
-                face.src = outfitUrl;
-                break;
-              case "wig":
-                wig.src = outfitUrl;
-                break;
-              case "shirt":
-                shirt.src = outfitUrl;
-                break;
-              case "pants":
-                pants.src = outfitUrl;
-                break;
-              // default:
-              //   console.log(`${appearenceFromUrl} не существует`);
-            }
-          } else {
-            // Если нет одежды персонажа - создаем
-            const outfit = document.createElement("img");
-            outfit.className = appearenceName;
-            outfit.src = `images/outfit/${currentAppearenceUrl}`;
-            switch (appearenceName) {
-              case "face":
-                outfit.classList.add = "face";
-                break;
-              case "wig":
-                outfit.classList.add = "wig";
-                break;
-              case "shirt":
-                outfit.classList.add = "shirt";
-                break;
-              case "pants":
-                outfit.classList.add = "pants";
-                break;
-            }
-            character.appendChild(outfit);
-          }
-        });
-      });
     });
+  });
+
+  const save = sidebarPickAppearence.querySelector(".save");
+  save.addEventListener("click", () => {
+    // localStorage.setItem(`"${sessionNumber}"`, character.innerHTML);
+    sidebarPickCharacter.classList.remove("deactive");
+    aboutCharacter.classList.remove("deactive");
+    sidebarPickAppearence.classList.remove("active");
+    character.classList.remove("appearence");
   });
 }
