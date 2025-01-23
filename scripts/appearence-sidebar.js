@@ -43,7 +43,7 @@ if (sidebarPickAppearence) {
     for (let i = 1; i <= cells.length; i++) {
       const image = document.createElement("img");
       image.className = "icon";
-      image.src = `../images/appearence/${activeAppearence}/${i}.png`;
+      image.src = `images/appearence/${activeAppearence}/${i}.png`;
 
       // Костыль без бекенда
       // Изображения грузятся 1-12.png, даже если их нет
