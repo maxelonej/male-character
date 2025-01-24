@@ -46,6 +46,9 @@ if (sidebarPickCharacter) {
       ) {
         // Если есть мини персонаж - подгружаем на основной
         character.innerHTML = savedCharacter.innerHTML;
+      } else if (miniCharacter) {
+        // Если miniCharacter существует, то тогда его innerHTML подгрузи
+        character.innerHTML = miniCharacter.innerHTML;
       } else {
         // Если нет персонажа - создаем обычного
         character.innerHTML = `
