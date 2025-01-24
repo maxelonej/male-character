@@ -33,3 +33,9 @@ body {
 /*   max-width: 100%; */
 /*   height: auto; */
 /* } */
+
+.logo {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
