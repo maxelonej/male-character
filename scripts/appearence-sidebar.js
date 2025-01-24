@@ -4,24 +4,13 @@ const sidebarPickAppearence = document.querySelector(
 );
 
 if (sidebarPickAppearence) {
-  console.log(sidebarPickAppearence);
-  // При загрузке
-  // if (storedValue !== null && storedValue !== "") {
-  //   // Если персонаж сохранен, тогда добавляем его
-  //   character.innerHTML = storedValue;
-  // } else if (cell.classList.toString().split(" ")[1] === 1) {
-  //   return;
-  // } else {
-  //   // Если нет персонажа - создаем, отображая только тело по дефолту
-  //   character.innerHTML =
-  //     '<img class="body" src="images/character/body.png" alt="Тело персонажа">';
-  // }
-
   const backToCharacterSelection = sidebarPickAppearence.querySelector(".back");
   const aboutCharacter = document.querySelector(".about-character");
   const character = document.querySelector(".container .character");
 
   backToCharacterSelection.addEventListener("click", () => {
+    const cell = sidebarPickCharacter.querySelector(".cell.active");
+    cell.classList.toggle("active");
     sidebarPickCharacter.classList.remove("deactive");
     aboutCharacter.classList.remove("deactive");
     sidebarPickAppearence.classList.remove("active");
@@ -113,7 +102,7 @@ if (sidebarPickAppearence) {
             pants.src = outfitUrl;
             break;
           // default:
-          //   console.log(`${appearenceFromUrl} не существует`);
+          //   console.log(`${appearenceName} не существует`);
         }
       } else {
         // Если нет одежды персонажа - создаем
@@ -141,10 +130,30 @@ if (sidebarPickAppearence) {
 
   const save = sidebarPickAppearence.querySelector(".save");
   save.addEventListener("click", () => {
-    // localStorage.setItem(`"${sessionNumber}"`, character.innerHTML);
+    const cell = sidebarPickCharacter.querySelector(".cell.active"); // understand current cell by added second class - .active
+    const session = cell.getAttribute("data-id"); // current session
+
     sidebarPickCharacter.classList.remove("deactive");
     aboutCharacter.classList.remove("deactive");
     sidebarPickAppearence.classList.remove("active");
     character.classList.remove("appearence");
+    cell.classList.toggle("active");
+
+    localStorage.setItem(session, character.innerHTML);
+    //  Отобразить в ячейке текущего персонажа
+    //  Если мини персонаж существует, тогда добавь в него innerHTML контент
+    //  Иначе создай новый мини персонаж
+    const miniCharacter = cell.querySelector(".character.mini");
+    const text = cell.querySelector(".text");
+    if (cell.contains(miniCharacter)) {
+      miniCharacter.innerHTML = character.innerHTML;
+      text.style.display = "none";
+    } else {
+      const savedCharacter = document.createElement("div");
+      savedCharacter.classList.add("character", "mini");
+      savedCharacter.innerHTML = character.innerHTML;
+      text.style.display = "none";
+      cell.appendChild(savedCharacter);
+    }
   });
 }
