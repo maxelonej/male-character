@@ -25,7 +25,8 @@ body {
 }
 
 *::selection {
-  color: var(--yellow);
+  /* color: rgba(47, 182, 69, 1); */
+  color: limegreen;
   background: var(--transparent);
 }
 
