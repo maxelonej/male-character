@@ -2,6 +2,7 @@
   --white: #fff;
   --black: #000;
   --yellow: yellow;
+  --header-bg: #122720;
   --transparent: transparent;
   --appearence-icon-bg: #416848;
   --sidebar-bg: #243c28;
@@ -12,6 +13,10 @@
 }
 
 body {
+  margin: 0;
+}
+
+main {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -34,9 +39,3 @@ body {
 /*   max-width: 100%; */
 /*   height: auto; */
 /* } */
-
-.logo {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
