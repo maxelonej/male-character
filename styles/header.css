@@ -11,6 +11,8 @@
   .header__logo {
     width: 40px;
     padding-right: 16px;
+    pointer-events: none;
+    user-select: none;
   }
 
   .header__navigation {
