@@ -1,5 +1,5 @@
 .header {
-  position: fixed;
+  position: absolute;
   width: 100%;
   padding-block: 16px;
   background: var(--header-bg);
