@@ -266,8 +266,6 @@
 
 @media screen and (width <= 768px) {
   .container {
-    position: static;
-
     .character {
       height: 78dvh;
       transform: translateY(-5%);

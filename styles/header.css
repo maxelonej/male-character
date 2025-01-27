@@ -1,5 +1,7 @@
 .header {
-  position: absolute;
+  position: sticky;
+  top: 0;
+  left: 0;
   width: 100%;
   padding-block: 16px;
   background: var(--header-bg);
