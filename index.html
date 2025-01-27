@@ -19,110 +19,135 @@
     />
   </head>
   <body>
-    <img class="logo" src="images/logo.png" alt="Лого" />
-    <div class="about-character">
-      <h1 class="title">Man character</h1>
-      <p class="description">
-        Character character character character character character character
-        character character character character character Character character
-        character character character character character character character
-        character character character
-      </p>
-    </div>
-
-    <div class="container">
-      <div class="character">
-        <img class="wig" src="images/outfit/wig/6.png" alt="Парик персонажа" />
-        <img class="face" src="images/outfit/face/2.png" alt="Лицо персонажа" />
-        <img
-          class="shirt"
-          src="images/outfit/shirt/7.png"
-          alt="Футболка персонажа"
-        />
-        <img
-          class="pants"
-          src="images/outfit/pants/2.png"
-          alt="Штаны персонажа"
-        />
-        <img
-          class="body"
-          src="images/character/body.png"
-          alt="Тело персонажа"
-        />
+    <header class="header">
+      <nav class="header__navigation">
+        <ul class="navigation__list">
+          <li class="navigation__item">
+            <a class="nagivation__link" href="#">Главная</a>
+          </li>
+          <li class="navigation__item">
+            <a class="nagivation__link" href="#">Женский персонаж</a>
+          </li>
+          <li class="navigation__item">
+            <a class="nagivation__link" href="#">Котик</a>
+          </li>
+        </ul>
+      </nav>
+      <img class="header__logo" src="images/logo.png" alt="Лого" />
+    </header>
+    <main>
+      <div class="about-character">
+        <h1 class="title">Man character</h1>
+        <p class="description">
+          Character character character character character character character
+          character character character character character Character character
+          character character character character character character character
+          character character character
+        </p>
       </div>
 
-      <div class="sidebar pick-character">
-        <div class="cell-wrapper">
-          <button class="cell" data-id="1">
-            <p class="text">Персонаж 1</p>
-          </button>
-          <button class="cell" data-id="2">
-            <p class="text">Персонаж 2</p>
-          </button>
+      <div class="container">
+        <div class="character">
+          <img
+            class="wig"
+            src="images/outfit/wig/6.png"
+            alt="Парик персонажа"
+          />
+          <img
+            class="face"
+            src="images/outfit/face/2.png"
+            alt="Лицо персонажа"
+          />
+          <img
+            class="shirt"
+            src="images/outfit/shirt/7.png"
+            alt="Футболка персонажа"
+          />
+          <img
+            class="pants"
+            src="images/outfit/pants/2.png"
+            alt="Штаны персонажа"
+          />
+          <img
+            class="body"
+            src="images/character/body.png"
+            alt="Тело персонажа"
+          />
         </div>
-        <div class="cell-wrapper">
-          <button class="cell" data-id="3">
-            <p class="text">Персонаж 3</p>
-          </button>
-          <button class="cell" data-id="4">
-            <p class="text">Персонаж 4</p>
-          </button>
-        </div>
-      </div>
 
-      <div class="sidebar pick-appearence">
-        <h1 class="title">Выбери себе внешность!</h1>
-        <div class="content">
-          <div class="icon_wrapper">
-            <button class="icon_container face">
-              <img
-                class="icon"
-                src="images/sidebar/icon_wrapper/face.png"
-                alt="Подобрать лицо"
-              />
+        <div class="sidebar pick-character">
+          <div class="cell-wrapper">
+            <button class="cell" data-id="1">
+              <p class="text">Персонаж 1</p>
             </button>
-            <button class="icon_container wig">
-              <img
-                class="icon"
-                src="images/sidebar/icon_wrapper/wig.png"
-                alt="Подобрать парик"
-                imagesid
-              />
-            </button>
-            <button class="icon_container shirt">
-              <img
-                class="icon"
-                src="images/sidebar/icon_wrapper/shirt.png"
-                alt="Подобрать футболку"
-              />
-            </button>
-            <button class="icon_container pants">
-              <img
-                class="icon"
-                src="images/sidebar/icon_wrapper/pants.png"
-                alt="Подобрать штаны"
-              />
+            <button class="cell" data-id="2">
+              <p class="text">Персонаж 2</p>
             </button>
           </div>
-          <div class="appearence">
-            <button class="cell"></button>
-            <button class="cell"></button>
-            <button class="cell"></button>
-            <button class="cell"></button>
-            <button class="cell"></button>
-            <button class="cell"></button>
-            <button class="cell"></button>
-            <button class="cell"></button>
-            <button class="cell"></button>
-            <button class="cell"></button>
-            <button class="cell"></button>
-            <button class="cell"></button>
+          <div class="cell-wrapper">
+            <button class="cell" data-id="3">
+              <p class="text">Персонаж 3</p>
+            </button>
+            <button class="cell" data-id="4">
+              <p class="text">Персонаж 4</p>
+            </button>
           </div>
         </div>
-        <button class="save">Сохранить</button>
-        <button class="back">Назад</button>
+
+        <div class="sidebar pick-appearence">
+          <h1 class="title">Выбери себе внешность!</h1>
+          <div class="content">
+            <div class="icon_wrapper">
+              <button class="icon_container face">
+                <img
+                  class="icon"
+                  src="images/sidebar/icon_wrapper/face.png"
+                  alt="Подобрать лицо"
+                />
+              </button>
+              <button class="icon_container wig">
+                <img
+                  class="icon"
+                  src="images/sidebar/icon_wrapper/wig.png"
+                  alt="Подобрать парик"
+                  imagesid
+                />
+              </button>
+              <button class="icon_container shirt">
+                <img
+                  class="icon"
+                  src="images/sidebar/icon_wrapper/shirt.png"
+                  alt="Подобрать футболку"
+                />
+              </button>
+              <button class="icon_container pants">
+                <img
+                  class="icon"
+                  src="images/sidebar/icon_wrapper/pants.png"
+                  alt="Подобрать штаны"
+                />
+              </button>
+            </div>
+            <div class="appearence">
+              <button class="cell"></button>
+              <button class="cell"></button>
+              <button class="cell"></button>
+              <button class="cell"></button>
+              <button class="cell"></button>
+              <button class="cell"></button>
+              <button class="cell"></button>
+              <button class="cell"></button>
+              <button class="cell"></button>
+              <button class="cell"></button>
+              <button class="cell"></button>
+              <button class="cell"></button>
+            </div>
+          </div>
+          <button class="save">Сохранить</button>
+          <button class="back">Назад</button>
+        </div>
       </div>
-    </div>
+    </main>
 
     <script type="module" src="scripts/main.js"></script>
   </body>

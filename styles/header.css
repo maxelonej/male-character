@@ -1,0 +1,40 @@
+.header {
+  position: fixed;
+  width: 100%;
+  padding-block: 16px;
+  background: var(--header-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .header__logo {
+    position: absolute;
+    right: 6.42px;
+    width: 40px;
+    object-fit: cover;
+  }
+
+  .navigation__list {
+    display: flex;
+    gap: 78px;
+    list-style-type: none;
+
+    .navigation__item {
+      /* font-size: 8.36px; */
+
+      .nagivation__link {
+        font-family: Montserrat Alternates;
+        font-weight: 800;
+        color: var(--white);
+        text-decoration: none;
+
+        &:hover {
+          border-bottom: 1px solid var(--white);
+        }
+      }
+    }
+  }
+}
+
+/* header>nav>ul>li>a */
+/* header > header__navigation > navigation__list > navigation__item > navigation__link */
