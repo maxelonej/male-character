@@ -46,12 +46,13 @@
   }
 }
 
-@media screen and (width <= 768px) {
+@media screen and (width <= 1116px) {
   .about-character {
     background: rgba(36, 60, 40, 0.4);
     margin: 0;
-    transform: translateY(-98%);
+    transform: translateY(-55%);
     z-index: 2;
+    width: 100%;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -69,25 +70,15 @@
 
     .description {
       margin: 0;
+      max-width: 300px;
       font-weight: 800;
-      font-size: 8px;
-      letter-spacing: 0.15em;
+      font-size: 12px;
+      padding-bottom: 30px;
+      line-height: normal;
       text-transform: uppercase;
       color: #d9d9d9;
       width: auto;
       height: auto;
     }
-  }
-}
-
-@media screen and (width <= 533px) {
-  .about-character {
-    transform: translateY(-78%);
-  }
-}
-
-@media screen and (width <= 397px) {
-  .about-character {
-    transform: translateY(-68%);
   }
 }

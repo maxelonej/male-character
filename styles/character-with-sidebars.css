@@ -44,6 +44,7 @@
     background: var(--sidebar-bg);
 
     &.pick-appearence {
+      top: 11%;
       opacity: 0;
       pointer-events: none;
       user-select: none;
@@ -264,11 +265,95 @@
   }
 }
 
-@media screen and (width <= 768px) {
+@media screen and (width <= 1250px) {
   .container {
     .character {
+      &.appearence {
+        transform: translateY(8%);
+        height: 72dvh;
+      }
+    }
+    .sidebar {
+      &.pick-character {
+        padding: calc(118px / 1.2) calc(123.27px / 1.2) calc(118px / 1.2)
+          calc(55px / 1.2);
+
+        .cell-wrapper {
+          .cell {
+            width: calc(120.27px / 1.2);
+            height: calc(166.82px / 1.2);
+          }
+        }
+      }
+
+      &.pick-appearence {
+        display: flex;
+        flex-direction: column;
+        top: auto;
+        padding: 16px;
+        border-radius: 30px;
+
+        &.active {
+          right: 0;
+        }
+
+        .title {
+          font-size: 16px;
+          line-height: 19.5px;
+        }
+
+        .content {
+          display: flex;
+          flex-direction: column;
+          gap: 10.5px;
+          margin-block: 7.5px;
+          /* margin: 0; */
+
+          .icon_wrapper {
+            flex-direction: row;
+            order: 1;
+
+            .icon_container {
+              width: 40px;
+              height: 40px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+
+              .icon {
+                width: 23.13px;
+                height: 23.13px;
+              }
+            }
+          }
+
+          .appearence {
+            grid-template-columns: repeat(6, 1fr);
+
+            .cell {
+              width: 40px;
+              height: 40px;
+              border-radius: 4.44px;
+            }
+          }
+        }
+
+        .save,
+        .back {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (width <= 1116px) {
+  .container {
+    height: 100dvh;
+
+    .character {
       height: 78dvh;
-      transform: translateY(-5%);
+      transform: translateY(9%);
     }
 
     .sidebar {
@@ -301,8 +386,32 @@
             .text {
               display: none;
             }
+
+            .mini.character {
+              height: 12dvh;
+              transform: translateY(2%);
+            }
           }
         }
+      }
+    }
+  }
+}
+
+@media screen and (width <= 404px) {
+  .container {
+    .sidebar {
+      &.pick-appearence {
+        .content {
+          .appearence {
+            grid-template-columns: repeat(4, 1fr);
+          }
+        }
+      }
+    }
+    .character {
+      &.appearence {
+        height: 68dvh;
       }
     }
   }
