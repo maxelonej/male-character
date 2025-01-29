@@ -140,12 +140,6 @@ if (sidebarPickAppearence) {
     cell.classList.toggle("active");
 
     localStorage.setItem(session, character.innerHTML);
-    localStorage.setItem("lastSavedCharacter", character.innerHTML);
-    const images = character.querySelectorAll("img");
-    images.forEach((img) => {
-      img.src = "./male-character/" + img.src;
-    });
-    localStorage.setItem("lastSavedManCharacter", character.innerHTML);
     //  Отобразить в ячейке текущего персонажа
     //  Если мини персонаж существует, тогда добавь в него innerHTML контент
     //  Иначе создай новый мини персонаж
